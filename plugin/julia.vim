@@ -13,7 +13,7 @@ let g:loaded_juliavim = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! JuliaLint :call JuliaLint()
+command! JuliaLint :call julia#JuliaLint()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
