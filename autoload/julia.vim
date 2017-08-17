@@ -14,7 +14,7 @@ let g:loaded_juliavim = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! julia#finish_julia_lint(job) abort
+function! s:finish_julia_lint(job) abort
     echo "Julia Lint is done"
     let inputfile = "test"
     let errors = []
