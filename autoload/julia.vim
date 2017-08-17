@@ -14,7 +14,7 @@ let g:loaded_juliavim = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! s:finish_julia_lint(job) abort
+function! julia#finish_julia_lint(job) abort
     echo "Julia Lint is done"
     let inputfile = "test"
     let errors = []
@@ -48,7 +48,7 @@ function! s:finish_julia_lint(job) abort
     call delete("test")
 endfunction
 
-function! JuliaLint()
+function! julia#JuliaLint()
     let filepath = expand('%:p')
     if stridx(filepath, '.jl') == -1
         echo "This is not julia code"
