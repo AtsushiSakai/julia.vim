@@ -53,7 +53,8 @@ The result of lint check will be shown in quickfix of vim.
 
 You can jump to the corresponding code with quickfix.
 
- 
+
+### Ignore error / warning codes
 
 If you want to ignore some error or warning codes,
 
