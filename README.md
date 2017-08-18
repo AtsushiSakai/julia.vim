@@ -2,13 +2,15 @@
 
 A vim plugin for Julia.
 
+ 
+
 functions:
 
 - Asynchronous lint checker. 
 
 # Requirements
 
-- [vim v8.x](http://www.vim.org/)
+- [vim v8.x](http://www.vim.org/) for +job
 
 - [Julia](https://julialang.org/)
 
@@ -33,7 +35,7 @@ functions:
  
 # Usage
 
-## Asynchronous lint checker 
+## Asynchronous lint checker for julia code
 
 ![gif1](https://github.com/AtsushiSakai/julia.vim/blob/master/images/JuliaLint.gif)
 
@@ -50,6 +52,16 @@ Then, the Lint checker is running asynchronously. (it is powered by vim +job)
 The result of lint check will be shown in quickfix of vim.
 
 You can jump to the corresponding code with quickfix.
+
+ 
+
+If you want to ignore some error or warning codes,
+
+you can set like this in vimrc:
+
+```
+let g:julia_lint_ignores = ["E321","W320"]
+```
 
 # License 
 
