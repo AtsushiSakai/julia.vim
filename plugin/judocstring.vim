@@ -11,6 +11,7 @@ function! s:generate_docstring(input_str)
     let ind = stridx(a:input_str, " ")
     let header = a:input_str[0:ind-1]
     let body = a:input_str[ind:]
+    echo header
     if header == 'function'
         let rmap = s:parse_function(body)
     else
@@ -103,6 +104,37 @@ function! s:generate_docstring_from_map(rmap)
     "echo rstr
     return rstr
 endfunction
+
+function! s:get_function_code()
+    let ccol = line(".") 
+    let input_str = ""
+    while 1
+        let line = getline(ccol)
+        let input_str = input_str . line
+        if stridx(line, ")") != -1
+            break
+        endif
+        let ccol = ccol + 1
+    endwhile
+
+    return input_str
+endfunction
+
+function! JuliaDocstring()
+    "Read function header
+    let line = getline(".")
+    if stridx(line, "function") != -1
+        let input_str = s:get_function_code()
+        "echo input_str
+        let docstring=s:generate_docstring(input_str)
+        "echo docstring
+        call append(line(".")-1, split(docstring, "\n"))
+    else
+        echo "[Error] Cannot find target codes"
+    endif
+endfunction
+
+command! JuliaDocstring :call JuliaDocstring()
 
 " Test code
 "function! s:Test(line)

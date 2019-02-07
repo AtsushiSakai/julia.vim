@@ -13,6 +13,9 @@ let g:loaded_juliavim = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+let s:judocstringpath = expand('<sfile>:p:h')."/judocstring.vim"
+execute 'source '.fnameescape(s:judocstringpath)
+
 function! s:finish_julia_lint(job) abort
     echo "Julia Lint is done"
     let inputfile = "test"
