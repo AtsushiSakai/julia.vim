@@ -2,9 +2,9 @@
 
 A vim plugin for Julia.
 
- 
-
 functions:
+
+- Automatic docstring generation.
 
 - Asynchronous lint checker. 
 
@@ -34,6 +34,25 @@ functions:
 
  
 # Usage
+
+## Automatic docstring generation
+
+[![asciicast](https://asciinema.org/a/UOw88Y8sbLtu8zppifiWr2JWW.svg)](https://asciinema.org/a/UOw88Y8sbLtu8zppifiWr2JWW)
+
+This fuction is for generating docsting automatically.
+
+- [Documentation · The Julia Language](https://docs.julialang.org/en/v1/manual/documentation/index.html) 
+
+Docstrings for function can be generated currently. 
+
+When you are writing a function in Julia, you put cursor on the function line, and just command:
+
+```
+:JuliaDocstring
+```
+
+Then, a docsting for the function will be generated. (see the upper movie).
+
 
 ## Asynchronous lint checker for julia code
 
