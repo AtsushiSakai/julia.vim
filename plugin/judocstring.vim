@@ -98,7 +98,7 @@ function! s:generate_docstring_from_map(rmap)
         let rstr = rstr . "...\n\n"
     endif
     let rstr = rstr . "# Example\n"
-    let rstr = rstr . "```julian"
+    let rstr = rstr . "```julia"
     let rstr = rstr . "```\n"
     let rstr = rstr . "\"\"\""
     "echo rstr
